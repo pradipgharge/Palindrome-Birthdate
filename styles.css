@@ -11,12 +11,6 @@ html {
     scroll-behavior: smooth;
 }
 
-:root {
-    --width-break: 800px;
-    
-
-}
-
 body {
     height: 100%;
     margin: 1.5rem;
