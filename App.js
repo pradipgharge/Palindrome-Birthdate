@@ -1,7 +1,6 @@
 var birthDate = document.querySelector("#birth-date");
 var btnCheck = document.querySelector("#check-btn");
 var outputDiv = document.querySelector(".show-output");
-var nextPalindromeDate = document.querySelector(".nearest-palindrome");
 
 // function to reverse a string
 function reverseStr(str) {
@@ -159,16 +158,17 @@ function clickHandler(e){
 
         var dateIsPalindrome = checkPalindromeForAllDateFormats(date);
         if(dateIsPalindrome){
-            outputDiv.innerText = "Yay ! your Birthday is a Palindrome";
-            nextPalindromeDate.innerText = "";
+            outputDiv.innerText = "Hurray! your Birthday is a Palindrome🥳";
+            
         }
         else{
             var [ counter, nextDate] = getNextPalindromeDate(date);
-            outputDiv.innerText =" Ooh, your Birthday is not a Palindrome";
-            nextPalindromeDate.innerText = `The next Palindrome date ${nextDate.day}-${nextDate.month}-${nextDate.year}, you were born ${counter} days earlier`;
+            outputDiv.innerText =`Uh Ooh, your Birthday is not a Palindrome😐,
+            The next Palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you were born ${counter} days earlier.`;
         }
        
 
     }
 }
+
 
