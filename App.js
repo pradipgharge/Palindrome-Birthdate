@@ -1,6 +1,7 @@
 var birthDate = document.querySelector("#birth-date");
 var btnCheck = document.querySelector("#check-btn");
 var outputDiv = document.querySelector(".show-output");
+outputDiv.style.display="none";
 
 // function to reverse a string
 function reverseStr(str) {
@@ -143,10 +144,10 @@ function isLeapYear(year) {
 btnCheck.addEventListener("click", clickHandler);
 
 function clickHandler(e){
+    
     var bdayString = birthDate.value;
     if(bdayString == ""){
-        outputDiv.innerText = "Please select your birthdate";
-        nextPalindromeDate.innerText = "";
+        displayOutputDiv("Please select a valid birthdate from the input-box");
     }
     else{
         var dateWithoutHyphen = bdayString.split("-");
@@ -158,17 +159,22 @@ function clickHandler(e){
 
         var dateIsPalindrome = checkPalindromeForAllDateFormats(date);
         if(dateIsPalindrome){
-            outputDiv.innerText = "Hurray! your Birthday is a Palindrome🥳";
+            displayOutputDiv("Hurray! your Birthday is a Palindrome🥳");
             
         }
         else{
             var [ counter, nextDate] = getNextPalindromeDate(date);
-            outputDiv.innerText =`Uh Ooh, your Birthday is not a Palindrome😐,
-            The next Palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you were born ${counter} days earlier.`;
+            displayOutputDiv(`Uh Ooh, your Birthday is not a Palindrome😐,
+            The next Palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you were born ${counter} days earlier.`);
         }
-       
-
     }
 }
+
+//function to show outputDiv
+function displayOutputDiv(text){
+    outputDiv.style.display="block";
+    outputDiv.innerText= text;
+}
+
 
 
