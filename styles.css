@@ -14,6 +14,9 @@ html {
 body {
     height: 100%;
     margin: 1.5rem;
+    background: url(/images/bdaybg.jpg);
+    background-position:bottom;
+    background-size: cover;
 }
 
 .container {
@@ -90,6 +93,7 @@ p {
 
 .footer {
     text-align: center;
+    margin-top: 3.5rem;
     background-color:#02523b;
     color:rgb(214, 250, 238);
     border-bottom-right-radius: 0.5rem;
