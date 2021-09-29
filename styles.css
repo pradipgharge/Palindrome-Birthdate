@@ -14,9 +14,6 @@ html {
 body {
     height: 100%;
     margin: 1.5rem;
-    background: url(/images/bdaybg.jpg);
-    background-position:bottom;
-    background-size: cover;
 }
 
 .container {
